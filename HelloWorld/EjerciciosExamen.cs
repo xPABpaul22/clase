@@ -37,6 +37,131 @@
         {
             return (value1 < value2) ? value2 * value2 : (value1 * 2) + value2;
         }
-        //
+        //Hacer una función con switch que reciba un código de error y muestre por pantalla lo siguiente: 
+        //"Error grave si el código de error es 0
+        //Error moderado si el código de error es 1
+        //Error leve si el código de error es 2
+        //Error desconocido en cualquier otro caso
+        public static void EjercicioExamen8()
+        {
+            System.Console.WriteLine("Introduzca un código de error");
+            int value = System.Convert.ToInt32(System.Console.ReadLine());
+            switch (value)
+            {
+                case 0: 
+                    System.Console.WriteLine("Error grave");
+                    break;
+                case 1: 
+                    System.Console.WriteLine("Error moderado");
+                    break;
+                case 2:
+                    System.Console.WriteLine("Error leve");
+                    break;
+                default:
+                    System.Console.WriteLine("Error desconocido");
+                    break;
+            }
+        }
+        //Hacer una función que se le pase un número e imprima la siguiente serie: 0, 3, 6, 9, 12, ... hasta llegar al número
+        //Ejemplo -> función(10) imprime 0, 3, 6, 9,
+        public static void EjercicioExamen9(int value)
+        {
+            int counter = 0;
+            while (counter <= value / 3)
+            {
+                System.Console.Write(counter * 3 + ", ");
+                counter++;
+            }
+        }
+        /*                                                                              CORRECCIÓN MÁS ÓPTIMA:
+        public static void EjercicioExamen9(int value)
+        {
+            int counter = 0;
+            while (counter <= value)
+            {
+                System.Console.Write(counter + ", ");
+                counter+=3;
+            }
+        }
+        */
+        //Hacer una función que se le pase un número e imprima por pantalla todos los números desde 0 hasta ese número
+        //Ejemplo -> funcion(10) -> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        public static void EjercicioExamen10(int value)
+        {
+            for (int counter = 0; counter <= value; counter++)
+                System.Console.Write(counter + ", ");
+        }
+        //Mismo sin que salga la "," del final
+        //SOLUCIÓN 1 (falla si da numero negativo, hay que proteger la ultima instrucción con un if)
+        public static void EjercicioExamen11(int value)
+        {
+            for (int counter = 0; counter < value; counter++)
+            {
+                    System.Console.Write(counter + ", ");
+            }
+            System.Console.Write(value);
+        }
+        //SOLUCIÓN 2 (No falla, pero ejecuta muchos ifs)
+        public static void EjercicioExamen11Part2(int value)
+        {
+            for (int counter = 0; counter < value; counter++)
+            {
+                System.Console.Write(counter);
+                    if (counter < value)
+                    System.Console.Write(", ");
+            }
+        }
+        //Hacer una función que se le pase un número e imprima por pantalla una linea de asteriscos
+        //ejemplo -> funcion(3) -> *** | funcion(10) -> **********
+        public static void EjercicioExamen12(int value)
+        {
+            for (int counter = 0; counter < value; counter++)
+                System.Console.Write("*");
+        }
+        //Hacer una función que se le pase un número e imprima el siguiente patrón:
+        //Ejemplo -> funcion (3) -> +*+ | funcion (10) +*+*+*+*+*
+        public static void EjercicioExamen13(int value)
+        {
+            for (int counter = 0; counter < value; counter++)
+            {
+                if (counter % 2 == 0)
+                    System.Console.Write("+");
+                else
+                    System.Console.Write("*");
+            }
+        }
+        /* Lo mismo de arriba pero con operador "? y :"
+        public static void EjercicioExamenlol(int value)
+        {
+            for (int counter = 0; counter < value; counter++)
+            {
+                string s = (counter % 2 == 0) ? "+" : "*";
+                System.Console.Write(s);
+            }
+        }
+        */
+        //lo mismo pero tiene que imprimir el patrón "-+*/-+*/"
+        public static void EjercicioExamen14(int value)
+        {
+            for (int counter = 0; counter < value; counter++)
+            {
+                int resto = counter % 4;
+                switch (resto)
+                {
+                    case 0:
+                        System.Console.Write("-");
+                        break;
+                    case 1:
+                        System.Console.Write("+");
+                        break;
+                    case 2:
+                        System.Console.Write("*");
+                        break;
+                    case 3:
+                        System.Console.Write("/");
+                        break;
+                }
+            }
+        }
     }
 }
