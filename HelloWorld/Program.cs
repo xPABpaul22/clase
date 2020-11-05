@@ -6,7 +6,8 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            EjerciciosExamen.EjercicioExamen14(11);
+            //EjerciciosExamen.EjercicioExamen14(5);
+            EjerciciosExamen.EjercicioExamen21(5);
         }
     }
 }

@@ -48,10 +48,10 @@
             int value = System.Convert.ToInt32(System.Console.ReadLine());
             switch (value)
             {
-                case 0: 
+                case 0:
                     System.Console.WriteLine("Error grave");
                     break;
-                case 1: 
+                case 1:
                     System.Console.WriteLine("Error moderado");
                     break;
                 case 2:
@@ -97,7 +97,7 @@
         {
             for (int counter = 0; counter < value; counter++)
             {
-                    System.Console.Write(counter + ", ");
+                System.Console.Write(counter + ", ");
             }
             System.Console.Write(value);
         }
@@ -107,7 +107,7 @@
             for (int counter = 0; counter < value; counter++)
             {
                 System.Console.Write(counter);
-                    if (counter < value)
+                if (counter < value)
                     System.Console.Write(", ");
             }
         }
@@ -161,6 +161,101 @@
                         System.Console.Write("/");
                         break;
                 }
+            }
+        }
+        // Lo que ha hecho javi en la pizarra
+        public static void EjercicioExamen15(int value)
+        {
+            for (int f = 0; f < value; f++)
+            {
+                for (int c = 0; c < value; c++)
+                    System.Console.Write("*");
+                System.Console.WriteLine();
+            }
+        }
+        //Mismo que lo anterior pero primera línea * segunda +.
+        public static void EjercicioExamen16(int value)
+        {
+            for (int f = 0; f < value; f++)
+            {
+                for (int c = 0; c < value; c++)
+                {
+                    if (f % 2 == 0)
+                        System.Console.Write("*");
+                    else
+                        System.Console.Write("+");
+                }
+                System.Console.WriteLine();
+            }
+        }
+        //Mismo que lo anterior, pero además las líneas deben ser +*+*+... siguiente *+*+*.... siguiente +*+*+.......
+        public static void EjercicioExamen17(int value)
+        {
+            for (int f = 0; f < value; f++)
+            {
+                for (int c = 0; c < value; c++)
+                {
+                    if ((c + f) % 2 == 0)
+                        System.Console.Write("*");
+                    else
+                        System.Console.Write("+");
+                }
+                System.Console.WriteLine();
+            }
+        }
+        //Me está empezando a dar pereza inventar enunciados, ejecutalo si quieres ver lo q hace
+        public static void EjercicioExamen18(int value)
+        {
+            for (int f = 0; f < value; f++)
+            {
+                for (int c = 0; c <= f; c++)
+                    System.Console.Write("*");
+                System.Console.WriteLine();
+            }
+        }
+        //lol
+        public static void EjercicioExamen19(int value)
+        {
+            for (int f = 0; f < value; f++)
+            {
+                for (int nespacios = value - f - 1; nespacios > 0; nespacios--)
+                    System.Console.Write(" ");
+                for (int nasteriscos = f + 1; nasteriscos > 0; nasteriscos--)
+                    System.Console.Write("*");
+                System.Console.WriteLine();
+            }
+        }
+        //asd
+        public static void EjercicioExamen20(int value)
+        {
+            for (int f = 0; f <= value; f++)
+            {
+                for (int espacios1 = value-f-1; espacios1 > 0; espacios1--)
+                    System.Console.Write(" ");
+                System.Console.Write("*");
+                for (int espacios2 = f * 2; espacios2 > 0; espacios2--)
+                    System.Console.Write(" ");
+                System.Console.Write("*");
+                System.Console.WriteLine();
+            }
+        }
+        //Ejercicio especial: Lo mismo que arriba pero que acabe en piramide.
+        public static void EjercicioEspecial1(int value)
+        {
+
+        }
+        //Mismo que ejercicio 20 pero al reves
+        public static void EjercicioExamen21(int value)
+        {
+            for (int f = 0; f <= value; f++)
+            {
+                for (int espacios1 = f; espacios1 > 0; espacios1--)
+                    System.Console.Write(" ");
+                System.Console.Write("*");
+                for (int espacios2 = (value + (value - f - 1) - (f - 1)); espacios2 > 0; espacios2--)
+                    System.Console.Write(" ");
+                System.Console.Write("*");
+                System.Console.WriteLine();
             }
         }
     }
