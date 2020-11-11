@@ -258,5 +258,72 @@
                 System.Console.WriteLine();
             }
         }
+        //Hacer una función que devuelve el sumatorio de un número
+        public static int Sumatorio(int value)
+        {
+            int sumatorio = 0;
+            for (int i = 1;i <= value; i++)
+                sumatorio += i;
+            return sumatorio;
+        }
+        //Hacer una funcion que devuelva 2 elevado a un numero
+        public static double EjercicioExamenX(int a)
+        {
+            bool inverse_result = a < 0;
+            if (inverse_result)
+                a = -a;
+            double result = 1;
+            for (int i = 0; i < a; i++)
+                result *= 2;
+            if (inverse_result)
+                return 1.0 / result;
+            return result;
+        }
+        //Hacer una función que devuelva 2 elevado a un numero
+        public static double EjercicioExamenX1(double a, double b)
+        {
+            double result = 0;
+            double a2 = a;
+            for (int i = 0; i <= b; i++)
+            {
+                result += 2;
+            }
+            return result;
+        }
+        //Hacer bandera que imprima dentro lo mismo que el ejercicioexamen18
+        public static void EjercicioExamenX2(int height, int width)
+        {
+            for (int f = 0;f < height; f++)
+            {
+                for (int c = 0; c <width; c++)
+                {
+                    if (f == 0 || f == height-1 || c == 0 || c == width-1)
+                        System.Console.Write("*");
+                    else if (c <= f)
+                        System.Console.Write("*");
+                    else
+                        System.Console.Write(" ");
+                }
+                System.Console.WriteLine();
+            }
+        }
+        //Lo mismo pero que lo de dentro llegue a un punto y luego sea decreciente
+        public static void EjercicioExamenX3(int height, int width)
+        {
+            for (int f = 0; f < height; f++)
+            {
+                int ff = height - f - 1;
+                for (int c = 0; c < width; c++)
+                {
+                    if (f == 0 || f == height - 1 || c == 0 || c == width - 1)
+                        System.Console.Write("*");
+                    else if (c <= f && c <= ff)
+                            System.Console.Write("*");
+                    else
+                        System.Console.Write(" ");
+                }
+                System.Console.WriteLine();
+            }
+        }
     }
 }
